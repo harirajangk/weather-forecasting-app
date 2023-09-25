@@ -9,11 +9,11 @@ drop database weather_forecast;
 
 create database weather_forecast;
 
-**Steps for Project**
+**Steps for Project Setup and starting**
 
 1. Clone this repository
 2. Import the code to IDE
-3. Provide the username, password, your openweathermap_api_key
+3. Provide the username, password, your openweathermap_api_key in application.properties
 4. Build the project 
 5. Run the application
 6. Open your browser and navigate to `http://localhost:8080`
