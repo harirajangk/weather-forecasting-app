@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" th:href="@{/static/css/styles.css}" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7; 
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff; 
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .weather-info {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9; 
+        }
+
+        h2 {
+            color: #555;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        span {
+            font-weight: bold;
+        }
+        
+        .return-button {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather for <span th:text="${weatherData.cityName}"></span></h1>
+
+        <div class="weather-info">
+            <h2>Current Weather</h2>
+            <p>Temperature: <span th:text="${weatherData.temperature}"></span> &deg;C</p>
+            <p>Feels Like: <span th:text="${weatherData.feelsLike}"></span> &deg;C</p>
+            <p>Conditions: <span th:text="${weatherData.conditions}">/p>
+            <p>Pressure: <span th:text="${weatherData.pressure}"></span> hPa</p>
+            <p>Humidity: <span th:text="${weatherData.humidity}"></span>%</p>
+            <p>Visibility: <span th:text="${weatherData.visibility}"></span> meters</p>
+            <p>Wind Speed: <span th:text="${weatherData.windSpeed}"></span> m/s</p>
+            <p>Wind Degree: <span th:text="${weatherData.windDegree}"></span> &deg;</p>
+            <p>Cloudiness: <span th:text="${weatherData.cloudiness}"></span>%</p>
+            <p>Genereated On: <span th:text="${weatherData.generatedDate}"></p>
+        </div>
+        <br>
+        <!-- Additional button to return to the index page -->
+        <div class="return-button-container">
+            <a th:href="@{/}" class="return-button">Return to Home</a>
+        </div>
+    </div>
+    
+</body>
+</html>
